@@ -1,0 +1,887 @@
+{
+	"info": {
+		"_postman_id": "812adc8b-b520-48c8-96b0-8170cbad16b9",
+		"name": "ecommerce 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33102693"
+	},
+	"item": [
+		{
+			"name": "Categpry",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"dirccfffft\",\r\n    \"description\":\"cotton, cargos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/addCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/allCategory?page=0&size=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"allCategory"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"bracelet\",\r\n    \"description\":\"kjsdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/updateCategory/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"updateCategory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n  \"productReference\": \"tshdirt1\",\r\n  \"description\": \"Product description1\",\r\n  \"price\": 1000,\r\n  \"brand\": \"US Polo\",\r\n  \r\n  \"manufactureDate\":\"2023-08-12\",\r\n  \"expiryDate\":\"2030-09-20\",\r\n  \"imageUrls\":[\r\n    \"img1\",\"img2\",\"img3\"\r\n  ],\r\n  \"dimensions\": {\r\n    \"length\": 17,\r\n    \"width\": 20,\r\n    \"height\": 4\r\n        },\r\n        \"categories\":[\r\n            {\"categoryName\":\"men\",\r\n    \"description\":\"men apparels\"},\r\n    {\r\n        \"categoryName\":\"tshirt\",\r\n    \"description\":\"cotton, cargos\"\r\n    },\r\n    {\r\n        \"categoryName\":\"women\",\r\n    \"description\":\"women apparels\"\r\n    }\r\n    ]\r\n\r\n    },\r\n    {\r\n    \"productReference\": \"tshddirt2\",\r\n    \"description\": \"Product description2\",\r\n    \"price\": 300,\r\n    \"brand\": \"Puma\",\r\n    \"manufactureDate\":\"2023-07-12\",\r\n  \"expiryDate\":\"2030-09-20\",\r\n  \"imageUrls\":[\r\n    \"img1\",\"img2\",\"img3\"\r\n  ],\r\n    \"dimensions\": {\r\n    \"length\": 18,\r\n    \"width\": 20,\r\n    \"height\": 4\r\n        },\r\n        \"categories\":[\r\n            {\"categoryName\":\"men\",\r\n    \"description\":\"men apparels\"},\r\n    {\r\n        \"categoryName\":\"tshirt\",\r\n    \"description\":\"cotton, cargos\"\r\n    },\r\n    {\r\n        \"categoryName\":\"women\",\r\n    \"description\":\"women apparels\"\r\n    }\r\n    ]\r\n    \r\n    },\r\n    {\r\n    \"productReference\": \"tshddddirt3\",\r\n    \"description\": \"Product description3\",\r\n    \"price\": 1100,\r\n    \"brand\": \"HnM\",\r\n    \"manufactureDate\":\"2022-08-12\",\r\n  \"expiryDate\":\"2030-09-20\",\r\n  \"imageUrls\":[\r\n    \"img1\",\"img2\",\"img3\"\r\n  ],\r\n    \"dimensions\": {\r\n    \"length\": 19,\r\n    \"width\": 20,\r\n    \"height\": 4\r\n        },\r\n        \"categories\":[\r\n           {\"categoryName\":\"men\",\r\n    \"description\":\"men apparels\"},\r\n    {\r\n        \"categoryName\":\"tshirt\",\r\n    \"description\":\"cotton, cargos\"\r\n    },\r\n    {\r\n        \"categoryName\":\"women\",\r\n    \"description\":\"women apparels\"\r\n    }\r\n            \r\n]\r\n        \r\n    },\r\n     {\r\n    \"productReference\": \"tshiddddddrt4\",\r\n    \"description\": \"Product description4\",\r\n    \"price\": 700,\r\n    \"brand\": \"Allen Solly\",\r\n    \"manufactureDate\":\"2022-08-12\",\r\n  \"expiryDate\":\"2030-09-20\",\r\n  \"imageUrls\":[\r\n    \"img1\",\"img2\",\"img3\"\r\n  ],\r\n    \"dimensions\": {\r\n    \"length\": 19,\r\n    \"width\": 20,\r\n    \"height\": 4\r\n        },\r\n        \"categories\":[\r\n        {\"categoryName\":\"men\",\r\n    \"description\":\"men apparels\"},\r\n    {\r\n        \"categoryName\":\"tshirt\",\r\n    \"description\":\"cotton, cargos\"\r\n    },\r\n    {\r\n        \"categoryName\":\"women\",\r\n    \"description\":\"women apparels\"\r\n    }\r\n            \r\n]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/product/create",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/product/products?page=0&size=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"product",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhbnRvbnkiLCJpYXQiOjE3MTE3MDA1NzMsImV4cCI6MTcxMTc4Njk3M30.i813w1KA4MoYTq4HiG6uVq8oIrRrGNZkyy35xWW3BMpgpURs6O3h345CUsVyEgT5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"locationReference\": \"mys\",\r\n        \"locationName\": \"mysore\",\r\n        \"locationType\": \"STORE\",\r\n            \"locationAddress\":{\r\n            \"line1\": \"123 Main Street\",\r\n            \"line2\": \"Apt 456\",\r\n            \"city\": \"ShippingCity\",\r\n            \"state\": \"ShippingState\",\r\n            \"country\": \"Vittal\",\r\n            \"pinCode\": \"54321\",\r\n            \"latitude\": 12.345,\r\n            \"longitude\": 67.890\r\n        }\r\n    },\r\n    {\r\n        \"locationReference\": \"ben\",\r\n        \"locationName\": \"bengalore\",\r\n        \"locationType\": \"STORE\",\r\n        \"locationAddress\":{\r\n            \"line1\": \"123 Main Street\",\r\n            \"line2\": \"Apt 456\",\r\n            \"city\": \"ShippingCity\",\r\n            \"state\": \"ShippingState\",\r\n            \"country\": \"Kappya\",\r\n            \"pinCode\": \"54321\",\r\n            \"latitude\": 12.345,\r\n            \"longitude\": 67.890\r\n        }\r\n    },\r\n    {\r\n        \"locationReference\": \"RejectedLocation\",\r\n        \"locationName\": \"RejectedLocation\",\r\n        \"locationType\": \"WAREHOUSE\",\r\n        \"locationAddress\":{\r\n            \"line1\": \"123 Main Street\",\r\n            \"line2\": \"Apt 456\",\r\n            \"city\": \"ShippingCity\",\r\n            \"state\": \"ShippingState\",\r\n            \"country\": \"Punya\",\r\n            \"pinCode\": \"54321\",\r\n            \"latitude\": 12.345,\r\n            \"longitude\": 67.890\r\n        }\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/location",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all location",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/location/allLocations?page=0&size=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"location",
+								"allLocations"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Create Inventory Bulk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inventoryData\":[\r\n        {\r\n            \"productRef\": \"abc1\",\r\n            \"locationRef\": \"mys\",\r\n            \"quantity\": 10000.0\r\n        },\r\n        {\r\n            \"productRef\": \"abc2\",\r\n            \"locationRef\": \"mys\",\r\n            \"quantity\": 50000.0\r\n        },\r\n        {\r\n            \"productRef\": \"abc3\",\r\n            \"locationRef\": \"mys\",\r\n            \"quantity\": 5000000.0\r\n        },\r\n        {\r\n            \"productRef\": \"acb4\",\r\n            \"locationRef\": \"mys\",\r\n            \"quantity\": 5000000.0\r\n        }\r\n    ],\r\n    \"validateData\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/inventory",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/inventory/all?page=0&size=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"inventory",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"firstName\":\"rajeshswari\",\r\n   \"lastName\":\"asd\",\r\n   \"email\":\"fdgsf@gmail.com\",\r\n   \"phone\":\"7019910122\",\r\n   \"dateOfBirth\": \"2002-11-16\",\r\n   \"userInput\":\r\n   {\r\n    \"username\":\"abcd\",\r\n    \"password\":\"12345\",\r\n    \"type\":\"CUSTOMER\"\r\n   }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/customer?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"orderReference\": \"ORD123\",\r\n//   \"createdDate\": \"2024-03-10T08:00:00Z\",\r\n//   \"status\": true,\r\n//   \"orderTotal\": 100,\r\n//   \"customer\":\r\n//   {\r\n//     \"customerID\":1\r\n//   },\r\n//   \"orderLines\": [\r\n//     {\r\n//       \"productReference\": \"brace\",\r\n//       \"quantity\": 1,\r\n//       \"lineTotal\": 50,\r\n//       \"order\": null\r\n//     },\r\n//     {\r\n//       \"productReference\": \"ring\",\r\n//       \"quantity\": 1,\r\n//       \"lineTotal\": 50,\r\n//       \"order\": null\r\n//     }\r\n//   ]\r\n// }\r\n\r\n\r\n\r\n\r\n\r\n\r\n{\r\n    \"orderReference\": \"101209\",\r\n    \"customer\": {\r\n        \"id\": 1\r\n    },\r\n    \"orderType\": \"HD\",\r\n    \"deliveryType\":\"EXPRESS\",\r\n    \"shippingAddress\": {\r\n        \"line1\": \"123 Main Street\",\r\n        \"line2\": \"Apt 456\",\r\n        \"city\": \"ShippingCity\",\r\n        \"state\": \"ShippingState\",\r\n        \"country\": \"ShippingCountry\",\r\n        \"pinCode\": \"54321\",\r\n        \"latitude\": 12.345,\r\n        \"longitude\": 67.890\r\n    },\r\n    \"billingAddress\": {\r\n        \"line1\": \"789 Oak Avenue\",\r\n        \"line2\": \"Suite 101\",\r\n        \"city\": \"BillingCity\",\r\n        \"state\": \"BillingState\",\r\n        \"country\": \"BillingCountry\",\r\n        \"pinCode\": \"67890\",\r\n        \"latitude\": 23.456,\r\n        \"longitude\": 45.678\r\n    },\r\n    \"orderLines\": [\r\n        {\r\n            \"productReference\": \"abc1\",\r\n            \"quantity\": 5.0,\r\n            \"lineTotal\":0.0,\r\n            \"unitPrice\":50.0\r\n        }\r\n        // ,\r\n        // {\r\n        //     \"productReference\": \"abc2\",\r\n        //     \"quantity\": 5.0,\r\n        //     \"lineTotal\":0.0,\r\n        //     \"unitPrice\":50.0\r\n        // },\r\n        // {\r\n        //     \"productReference\": \"xyz\",\r\n        //     \"quantity\": 5.0,\r\n        //     \"lineTotal\":0.0,\r\n        //     \"unitPrice\":50.0\r\n        // }\r\n        // {\r\n        //     \"productReference\": \"brace123\",\r\n        //     \"quantity\": 5,\r\n        //     \"lineTotal\":0\r\n        // }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/order",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/order/orders?page=0&size=1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"order",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fulfillment",
+			"item": [
+				{
+					"name": "Update Fulfillment Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/fulfillment/acknowledge",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"fulfillment",
+								"acknowledge"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "Add address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"line1\": \"123 Main Street\",\r\n    \"line2\": \"Apt 101\",\r\n    \"city\": \"City\",\r\n    \"state\": \"State\",\r\n    \"country\": \"Country\",\r\n    \"pinCode\": \"123456\",\r\n    \"username\": \"rajeshwari\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"rajeshwari\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"rajeshwari\",\r\n  \"addressType\": \"Home\",\r\n  \"line1\": \"Max\",\r\n  \"line2\": \"Max\",\r\n  \"city\": \"Updated City\",\r\n  \"state\": \"Updated State\",\r\n  \"country\": \"Updated Country\",\r\n  \"pinCode\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "creditcard",
+			"item": [
+				{
+					"name": "add card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardNumber\": 12345678921,\r\n  \"cvv\": 321,\r\n  \"cardholderName\": \"abc\",\r\n  \"expiryDate\": \"12-2025\",\r\n   \"username\": \"rajeshwari\"\r\n  \r\n}\r\n\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update credit card",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1, \r\n  \"cardNumber\": 12345678921, \r\n  \"cvv\": 27, \r\n  \"cardholderName\": \"Updated Name\", \r\n  \"expiryDate\": \"12-2026\", \r\n    \"username\": \"rajeshwari\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"rajeshwari\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cards",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"rajeshwari\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/user/users?page=0&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Copy",
+			"item": [
+				{
+					"name": "SearchPriceNCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"priceInput\":{\r\n        \"minPrice\":200,\r\n        \"maxPrice\":2000\r\n    },\r\n    \"categorySearch\":{\r\n            \"categoryName\":\"tshirt\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/product/productsByPriceAndCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"product",
+								"productsByPriceAndCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prodref",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productReference\":\"tshirt1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/product/productRef",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"productRef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"antony\",\r\n    \"password\":\"antony\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"email\":\"chaudharydevesh33@gmail.com\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/user/forgotpassword/chaudharydevesh33@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"forgotpassword",
+						"chaudharydevesh33@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
